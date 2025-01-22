@@ -8,7 +8,7 @@ Migrations for the reimagined-disco database
 # db start
 
 ```
-POSTGRES_PASSWORD=$(echo $HOME/private/db-passwd)
+POSTGRES_PASSWORD=$(echo ./private/db-passwd)
 docker run --rm --name reimagined-disco-db  \
   -p 5432:5432                              \
   -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD   \
@@ -20,7 +20,7 @@ docker logs -f reimagined-disco-db
 ```
 or under Windows:
 ```
-SET /p POSTGRES_PASSWORD=<%cd%\private\db-passwd
+SET /p POSTGRES_PASSWORD=< .\private\db-passwd
 docker run --rm --name reimagined-disco-db  ^
   -p 5432:5432                              ^
   -e POSTGRES_PASSWORD=%POSTGRES_PASSWORD%  ^
