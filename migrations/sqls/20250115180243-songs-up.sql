@@ -3,7 +3,8 @@
 -- **
 CREATE TABLE artists (
   artist_id SERIAL PRIMARY KEY,
-  "name" varchar
+  "name" varchar,
+  UNIQUE("name")
 );
 
 -- **
@@ -12,7 +13,8 @@ CREATE TABLE albums (
   title varchar,
   artist_id INT REFERENCES artists,
   "year" int,
-  genre varchar
+  genre varchar,
+  UNIQUE(title, artist_id)
 );
 
 -- **
@@ -20,7 +22,9 @@ CREATE TABLE songs (
   song_id SERIAL PRIMARY KEY,
   title varchar,
   track_nr int,
-  album_id INT REFERENCES albums
+  disc_nr int default(1),
+  album_id INT REFERENCES albums,
+  UNIQUE(title,album_id)
 );
 
 -- **
@@ -28,7 +32,8 @@ CREATE TABLE files (
   file_id SERIAL PRIMARY KEY,
   file_path varchar,
   file_name varchar,
-  song_id INT REFERENCES albums
+  song_id INT REFERENCES songs,
+  UNIQUE(file_path,file_name)
 );
 
 -- ** DEPRECATE MULTI SOURCE IDEA
