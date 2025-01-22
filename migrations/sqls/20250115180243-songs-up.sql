@@ -24,16 +24,15 @@ CREATE TABLE songs (
   track_nr int,
   disc_nr int default(1),
   album_id INT REFERENCES albums,
-  UNIQUE(title,album_id)
+  UNIQUE(title, album_id)
 );
 
 -- **
 CREATE TABLE files (
-  file_id SERIAL PRIMARY KEY,
+  song_id SERIAL PRIMARY KEY REFERENCES songs,
   file_path varchar,
   file_name varchar,
-  song_id INT REFERENCES songs,
-  UNIQUE(file_path,file_name)
+  UNIQUE(file_path, file_name)
 );
 
 -- ** DEPRECATE MULTI SOURCE IDEA
