@@ -32,9 +32,6 @@ CREATE TABLE files (
   song_id SERIAL PRIMARY KEY REFERENCES songs,
   file_path varchar,
   file_name varchar,
+  modified timestamp, -- no time zone
   UNIQUE(file_path, file_name)
 );
-
--- ** DEPRECATE MULTI SOURCE IDEA
-DROP TABLE IF EXISTS sources;
-DROP TABLE IF EXISTS source_types;
