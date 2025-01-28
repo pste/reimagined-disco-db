@@ -4,16 +4,16 @@ Migrations for the reimagined-disco database
 # help
 `node app.js` will print an help message
 
-
 # db start
 
 ```
 POSTGRES_PASSWORD=$(echo ./private/db-passwd)
 docker run --rm --name reimagined-disco-db  \
   -p 5432:5432                              \
+  -v pgdata:/var/lib/postgresql/data        \
   -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD   \
-  -e POSTGRES_USER=reimagineddisco         \
-  -e POSTGRES_DB=reimagineddisco           \
+  -e POSTGRES_USER=reimagineddisco          \
+  -e POSTGRES_DB=reimagineddisco            \
   -d                                        \
     postgres:14
 docker logs -f reimagined-disco-db
@@ -23,6 +23,7 @@ or under Windows:
 SET /p POSTGRES_PASSWORD=< .\private\db-passwd
 docker run --rm --name reimagined-disco-db  ^
   -p 5432:5432                              ^
+  -v pgdata:/var/lib/postgresql/data        ^
   -e POSTGRES_PASSWORD=%POSTGRES_PASSWORD%  ^
   -e POSTGRES_USER=reimagineddisco          ^
   -e POSTGRES_DB=reimagineddisco            ^
