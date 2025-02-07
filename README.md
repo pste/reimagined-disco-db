@@ -41,3 +41,12 @@ Cleanup (if needed):
 ```
 docker rm reimagined-disco-db
 ```
+
+# using a client
+
+```
+docker run --rm -it --name cloudbeaver              \
+  -p 8888:8978                                      \
+  -v $HOME\dbeaverData:/opt/cloudbeaver/workspace   \
+    dbeaver/cloudbeaver:latest
+```
