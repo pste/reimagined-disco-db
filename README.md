@@ -1,6 +1,9 @@
 # reimagined-disco-db
 Migrations for the reimagined-disco database
 
+# er schema
+![ER Schema](reimagineddisco-db.png "ER Schema")
+
 # help
 `node app.js` will print an help message
 
