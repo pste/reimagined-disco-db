@@ -4,6 +4,7 @@ CREATE TABLE user_stats (
   song_id SERIAL REFERENCES "songs",
   user_id SERIAL REFERENCES "users",
   played timestamp NULL,
+  playcount INT DEFAULT(0),
   stars INT DEFAULT(0),
   UNIQUE(song_id, user_id)
 );
