@@ -7,6 +7,12 @@ Migrations for the reimagined-disco database
 # help
 `node app.js` will print an help message
 
+# migrate
+Use the `.env` file to connect to the remote db as it was on `localhost`.  
+`kubectl port-forward deployment/postgres 5432:5432 -n reimagined-disco`  
+then
+`node app.js -e local check` (and so on ...)
+
 # db start
 
 ```
