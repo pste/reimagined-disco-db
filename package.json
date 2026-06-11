@@ -16,7 +16,7 @@
     "url": "git+https://github.com/pste/reimagined-disco-db.git"
   },
   "author": "pste",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pste/reimagined-disco-db/issues"
   },
